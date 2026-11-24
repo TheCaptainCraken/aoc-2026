@@ -1,0 +1,47 @@
+// Day {{DAY}} writeup. Build it with `cargo writeup {{DAY}}`, or keep
+// `cargo writeup {{DAY}} --watch` running while you write.
+#import "lib.typ": *
+
+#let day = {{DAY}}
+
+#show: writeup.with(
+  day: day,
+  title: [#todo[Puzzle title]],
+  subtitle: [#todo[The idea that cracks it, in one line.]],
+)
+
+#lede[
+  #todo[What the puzzle asks, in two sentences, and the idea behind the solution in one.]
+]
+
+= The puzzle <sec:puzzle>
+
+#todo[The input and what each part asks, in your own words: Advent of Code asks that the puzzle text and inputs aren't republished.]
+
+= Part one <sec:part-one>
+
+#todo[The approach, and why it works.]
+
+#item(day, "part_one") <lst:part-one>
+
+#todo[Its cost, e.g. $O(n log n)$ time and $O(n)$ space for $n$ lines of input.]
+
+= Part two <sec:part-two>
+
+#todo[What changes from part one, and what that does to the approach.]
+
+#item(day, "part_two") <lst:part-two>
+
+= Results <sec:results>
+
+#results(day)
+
+= What I learned <sec:learned>
+
+- #todo[A trick, a pitfall, a Rust feature worth remembering.]
+
+// The solution, without the runner and tests every day shares, as an appendix.
+#show: appendix
+= Full solution <sec:full>
+
+#solution(day)

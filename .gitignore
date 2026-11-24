@@ -1,0 +1,15 @@
+# Rust build output
+/target
+
+# Advent of Code asks that puzzle inputs aren't shared: keep yours local.
+/data/inputs/*
+!/data/inputs/.gitkeep
+
+# Built writeups (cargo writeup). Remove this line to publish the PDFs.
+/writeups/pdf/
+
+# Editors and OS
+.idea/
+.vscode/
+*.swp
+.DS_Store

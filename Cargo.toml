@@ -1,0 +1,20 @@
+[package]
+name = "aoc-2026"
+version = "0.1.0"
+edition = "2024"
+description = "Advent of Code 2026 solutions in Rust, with a Typst writeup per day."
+license = "MIT"
+publish = false
+default-run = "aoc"
+
+# The CLI behind `cargo scaffold`, `cargo solve`, `cargo time`, `cargo all` and
+# `cargo writeup`. Every day is its own standalone binary, found in src/bin/.
+[[bin]]
+name = "aoc"
+path = "src/main.rs"
+
+[dependencies]
+serde_json = "1"
+
+[profile.release]
+debug = 1 # keep line tables so profilers (perf, flamegraph) show function names

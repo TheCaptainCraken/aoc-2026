@@ -1,0 +1,65 @@
+//! Day {{DAY}}: <puzzle title>
+//! https://adventofcode.com/2026/day/{{DAY}}
+
+pub fn part_one(_input: &str) -> Option<u64> {
+    None
+}
+
+pub fn part_two(_input: &str) -> Option<u64> {
+    None
+}
+
+// ── Runner ───────────────────────────────────────────────────────────────────
+// The same every day: `main` runs both parts on data/inputs/{{DD}}.txt, and the
+// tests check them on the example. The writeup's full listing stops here.
+
+fn main() {
+    let path = concat!(env!("CARGO_MANIFEST_DIR"), "/data/inputs/{{DD}}.txt");
+    let input = std::fs::read_to_string(path).unwrap_or_default();
+    if input.trim().is_empty() {
+        eprintln!("No input: save https://adventofcode.com/2026/day/{{DAY}}/input to data/inputs/{{DD}}.txt");
+        std::process::exit(1);
+    }
+
+    let start = std::time::Instant::now();
+    let one = part_one(&input);
+    report(1, start.elapsed(), one);
+
+    let start = std::time::Instant::now();
+    let two = part_two(&input);
+    report(2, start.elapsed(), two);
+}
+
+/// Prints `part 1 (2314131 ns): 12345`, the line `cargo solve` reads.
+fn report(part: u8, time: std::time::Duration, answer: Option<impl std::fmt::Display>) {
+    match answer {
+        Some(answer) => println!("part {part} ({} ns): {answer}", time.as_nanos()),
+        None => println!("part {part} ({} ns)", time.as_nanos()),
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    // Swap each `None` for `Some(<the answer the puzzle gives for the example>)`.
+
+    #[test]
+    fn part_one_example() {
+        assert_eq!(part_one(&example(1)), None);
+    }
+
+    #[test]
+    fn part_two_example() {
+        assert_eq!(part_two(&example(2)), None);
+    }
+
+    /// data/examples/{{DD}}-2.txt for part two if it has its own example,
+    /// otherwise data/examples/{{DD}}.txt.
+    fn example(part: u8) -> String {
+        let dir = concat!(env!("CARGO_MANIFEST_DIR"), "/data/examples");
+        std::fs::read_to_string(format!("{dir}/{{DD}}-{part}.txt"))
+            .or_else(|_| std::fs::read_to_string(format!("{dir}/{{DD}}.txt")))
+            .expect("save the example to data/examples/{{DD}}.txt")
+    }
+}

@@ -1,0 +1,6 @@
+[alias]
+scaffold = "run --quiet --bin aoc -- scaffold"
+solve = "run --quiet --bin aoc -- solve"
+time = "run --quiet --bin aoc -- time"
+all = "run --quiet --bin aoc -- all"
+writeup = "run --quiet --bin aoc -- writeup"
