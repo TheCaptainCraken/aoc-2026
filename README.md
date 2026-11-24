@@ -96,7 +96,7 @@ The times in a writeup come from the last `cargo solve` or `cargo time`, so run 
 
 ## Layout
 
-```
+```plain
 src/
   main.rs          the scaffold / solve / time / all / writeup commands
   bin/DD.rs        one standalone file per day
